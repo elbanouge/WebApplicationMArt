@@ -9,23 +9,22 @@ using WebApplicationMArt.Models;
 
 namespace WebApplicationMArt.Controllers
 {
-    public class AdministrateursController : Controller
+    public class UtllisateursController : Controller
     {
         private readonly MArtContext _context;
 
-        public AdministrateursController(MArtContext context)
+        public UtllisateursController(MArtContext context)
         {
-            //LinkedList<Administrateur> administrateurs = new LinkedList<Administrateur>();
             _context = context;
         }
 
-        // GET: Administrateurs
+        // GET: Utllisateurs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Administrateurs.ToListAsync());
+            return View(await _context.Utllisateurs.ToListAsync());
         }
 
-        // GET: Administrateurs/Details/5
+        // GET: Utllisateurs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +32,39 @@ namespace WebApplicationMArt.Controllers
                 return NotFound();
             }
 
-            var administrateur = await _context.Administrateurs
-                .FirstOrDefaultAsync(m => m.IdAd == id);
-            if (administrateur == null)
+            var utllisateur = await _context.Utllisateurs
+                .FirstOrDefaultAsync(m => m.IdUtl == id);
+            if (utllisateur == null)
             {
                 return NotFound();
             }
 
-            return View(administrateur);
+            return View(utllisateur);
         }
 
-        // GET: Administrateurs/Create
-        public IActionResult Create()
+        // GET: Utllisateurs/Create
+        public IActionResult Register()
         {
             return View();
         }
 
-        // POST: Administrateurs/Create
+        // POST: Utllisateurs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdAd,LoginAd,PassAd")] Administrateur administrateur)
+        public async Task<IActionResult> Register([Bind("IdUtl,NomUtl,PrenomUtl,MotPassUtl,TelUtl,EmailUtl,AdresseUtl,PaysUtl,DomaineUtl,ImageUtl")] Utllisateur utllisateur)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(administrateur);
+                _context.Add(utllisateur);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(administrateur);
+            return View(utllisateur);
         }
 
-        // GET: Administrateurs/Edit/5
+        // GET: Utllisateurs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +72,22 @@ namespace WebApplicationMArt.Controllers
                 return NotFound();
             }
 
-            var administrateur = await _context.Administrateurs.FindAsync(id);
-            if (administrateur == null)
+            var utllisateur = await _context.Utllisateurs.FindAsync(id);
+            if (utllisateur == null)
             {
                 return NotFound();
             }
-            return View(administrateur);
+            return View(utllisateur);
         }
 
-        // POST: Administrateurs/Edit/5
+        // POST: Utllisateurs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdAd,LoginAd,PassAd")] Administrateur administrateur)
+        public async Task<IActionResult> Edit(int id, [Bind("IdUtl,NomUtl,PrenomUtl,MotPassUtl,TelUtl,EmailUtl,AdresseUtl,PaysUtl,DomaineUtl,ImageUtl")] Utllisateur utllisateur)
         {
-            if (id != administrateur.IdAd)
+            if (id != utllisateur.IdUtl)
             {
                 return NotFound();
             }
@@ -97,12 +96,12 @@ namespace WebApplicationMArt.Controllers
             {
                 try
                 {
-                    _context.Update(administrateur);
+                    _context.Update(utllisateur);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AdministrateurExists(administrateur.IdAd))
+                    if (!UtllisateurExists(utllisateur.IdUtl))
                     {
                         return NotFound();
                     }
@@ -113,10 +112,10 @@ namespace WebApplicationMArt.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(administrateur);
+            return View(utllisateur);
         }
 
-        // GET: Administrateurs/Delete/5
+        // GET: Utllisateurs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +123,30 @@ namespace WebApplicationMArt.Controllers
                 return NotFound();
             }
 
-            var administrateur = await _context.Administrateurs
-                .FirstOrDefaultAsync(m => m.IdAd == id);
-            if (administrateur == null)
+            var utllisateur = await _context.Utllisateurs
+                .FirstOrDefaultAsync(m => m.IdUtl == id);
+            if (utllisateur == null)
             {
                 return NotFound();
             }
 
-            return View(administrateur);
+            return View(utllisateur);
         }
 
-        // POST: Administrateurs/Delete/5
+        // POST: Utllisateurs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var administrateur = await _context.Administrateurs.FindAsync(id);
-            _context.Administrateurs.Remove(administrateur);
+            var utllisateur = await _context.Utllisateurs.FindAsync(id);
+            _context.Utllisateurs.Remove(utllisateur);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AdministrateurExists(int id)
+        private bool UtllisateurExists(int id)
         {
-            return _context.Administrateurs.Any(e => e.IdAd == id);
+            return _context.Utllisateurs.Any(e => e.IdUtl == id);
         }
     }
 }

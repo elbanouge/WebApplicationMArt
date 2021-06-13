@@ -1,0 +1,758 @@
+/* ---------------------------------- */
+/* Bootstrap-select
+------------------------------------- */
+select.bs-select-hidden,
+select.selectpicker {
+  display: none !important;
+}
+
+.bootstrap-select .btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.bootstrap-select > .dropdown-toggle {
+  width: 100%;
+  padding-right: 25px;
+  z-index: 1;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder {
+  color: var(--textColor2);
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+  color: var(--textColor2);
+}
+
+.bootstrap-select > select {
+  position: absolute !important;
+  bottom: 0;
+  left: 50%;
+  display: block !important;
+  width: 0.5px !important;
+  height: 100% !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  border: none;
+}
+
+.bootstrap-select > select.mobile-device {
+  top: 0;
+  left: 0;
+  display: block !important;
+  width: 100% !important;
+  z-index: 2;
+}
+
+.has-error .bootstrap-select .dropdown-toggle,
+.error .bootstrap-select .dropdown-toggle {
+  border-color: #b94a48;
+}
+
+.bootstrap-select.fit-width {
+  width: auto !important;
+}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 100%;
+}
+
+.bootstrap-select.form-control {
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+}
+
+.bootstrap-select.form-control:not([class*="col-"]) {
+  width: 100%;
+}
+
+.bootstrap-select.form-control.input-group-btn {
+  z-index: auto;
+}
+
+.bootstrap-select.form-control.input-group-btn:not(:first-child):not(:last-child)
+  > .btn {
+  border-radius: 0;
+}
+
+.bootstrap-select.btn-group:not(.input-group-btn),
+.bootstrap-select.btn-group[class*="col-"] {
+  float: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 0;
+}
+
+.bootstrap-select.btn-group.dropdown-menu-right,
+.bootstrap-select.btn-group[class*="col-"].dropdown-menu-right {
+  float: right;
+}
+
+.row .bootstrap-select.btn-group[class*="col-"].dropdown-menu-right {
+  float: right;
+}
+
+.form-inline .bootstrap-select.btn-group,
+.form-horizontal .bootstrap-select.btn-group,
+.checkbox .bootstrap-select.btn-group {
+  margin-bottom: 0;
+}
+
+.checkbox-lg .bootstrap-select.btn-group.form-control,
+.checkbox-sm .bootstrap-select.btn-group.form-control {
+  padding: 0;
+}
+
+.checkbox-lg .bootstrap-select.btn-group.form-control .dropdown-toggle,
+.checkbox-sm .bootstrap-select.btn-group.form-control .dropdown-toggle {
+  height: 100%;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: inherit;
+}
+
+.form-inline .bootstrap-select.btn-group .form-control {
+  width: 100%;
+}
+
+.bootstrap-select.btn-group.disabled {
+  cursor: not-allowed;
+}
+
+.bootstrap-select.btn-group.disabled:focus {
+  outline: none !important;
+}
+
+.bootstrap-select.btn-group > .disabled {
+  cursor: not-allowed;
+}
+
+.bootstrap-select.btn-group > .disabled:focus {
+  outline: none !important;
+}
+
+.bootstrap-select.btn-group.bs-container {
+  position: absolute;
+  height: 0 !important;
+  padding: 0 !important;
+}
+
+.bootstrap-select.btn-group.bs-container .dropdown-menu {
+  z-index: 1060;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  overflow: hidden;
+  width: 100%;
+  line-height: 48px;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 90%;
+  float: left;
+  height: 48px;
+  display: block;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li.hidden {
+  display: none;
+}
+
+.language-switcher.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  max-width: 100%;
+  float: left;
+}
+
+.sort-by .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  max-width: 100%;
+  float: left;
+  line-height: 20px;
+  height: auto;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .caret {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -1px;
+  vertical-align: middle;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+
+.bootstrap-select.open .dropdown-toggle .caret::before {
+  content: "\e931";
+}
+
+.bootstrap-select.btn-group[class*="col-"] .dropdown-toggle {
+  width: 100%;
+}
+
+.bootstrap-select.btn-group .dropdown-menu {
+  min-width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.bootstrap-select.btn-group .dropdown-menu.inner {
+  position: static;
+  float: none;
+  border: 0;
+  padding: 0 10px;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li {
+  position: relative;
+  margin-bottom: 1px;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li.disabled {
+  opacity: 0.75;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li.active small {
+  color: var(--defaultColor);
+}
+
+.bootstrap-select.btn-group .dropdown-menu li.disabled a {
+  cursor: not-allowed;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a span.text {
+  display: inline-block;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li small {
+  padding-left: 7px;
+  opacity: 0.8;
+}
+
+.bootstrap-select.btn-group .dropdown-menu .notify {
+  position: absolute;
+  bottom: 5px;
+  width: calc(100% - 20px);
+  margin: 0;
+  min-height: 26px;
+  padding: 3px 5px;
+  pointer-events: none;
+  padding: 5px 10px;
+  background: var(--textColor);
+  color: var(--defaultColor);
+  margin: 5px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+  border: none;
+}
+
+.bootstrap-select.btn-group .no-results {
+  padding: 5px 10px;
+  background: #f6f6f6;
+  margin: 5px 0;
+  margin-bottom: 0;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.bootstrap-select.btn-group.fit-width .dropdown-toggle .filter-option {
+  position: static;
+}
+
+.bootstrap-select.btn-group.fit-width .dropdown-toggle .caret {
+  position: static;
+  top: auto;
+  margin-top: -1px;
+}
+
+.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+  white-space: normal;
+}
+
+.bootstrap-select.show-menu-arrow.open > .dropdown-toggle {
+  z-index: 1061;
+}
+
+.bootstrap-select.show-menu-arrow .dropdown-toggle:before {
+  content: "";
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgba(204, 204, 204, 0.2);
+  position: absolute;
+  bottom: -4px;
+  left: 9px;
+  display: none;
+}
+
+.bootstrap-select.show-menu-arrow .dropdown-toggle:after {
+  content: "";
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid white;
+  position: absolute;
+  bottom: -4px;
+  left: 10px;
+  display: none;
+}
+
+.bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:before {
+  bottom: auto;
+  top: -3px;
+  border-top: 7px solid rgba(204, 204, 204, 0.2);
+  border-bottom: 0;
+}
+
+.bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:after {
+  bottom: auto;
+  top: -3px;
+  border-top: 6px solid white;
+  border-bottom: 0;
+}
+
+.bootstrap-select.show-menu-arrow.pull-right .dropdown-toggle:before {
+  right: 12px;
+  left: auto;
+}
+
+.bootstrap-select.show-menu-arrow.pull-right .dropdown-toggle:after {
+  right: 13px;
+  left: auto;
+}
+
+.bootstrap-select.show-menu-arrow.open > .dropdown-toggle:before,
+.bootstrap-select.show-menu-arrow.open > .dropdown-toggle:after {
+  display: block;
+}
+
+.bs-searchbox,
+.bs-actionsbox,
+.bs-donebutton {
+  padding: 0 5px;
+}
+
+.bs-actionsbox {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 5px;
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+
+.bs-actionsbox div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bootstrap-select.btn-group .bs-actionsbox div button {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #f6f6f6;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 5px;
+  height: 36px;
+  font-size: 14px;
+  color: #777;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.bootstrap-select.btn-group .bs-actionsbox div button:first-child {
+  border-radius: 6px 0 0 6px;
+  background-color: #f0f0f0;
+}
+
+.bootstrap-select.btn-group .bs-actionsbox div button:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+.bootstrap-select.btn-group .bs-actionsbox div button:hover {
+  background: var(--primaryColor);
+  color: var(--defaultColor);
+}
+
+.bs-actionsbox .btn-group button {
+  width: 50%;
+}
+
+.bs-donebutton {
+  float: left;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bs-donebutton .btn-group button {
+  width: 100%;
+}
+
+.bs-searchbox {
+  position: relative;
+}
+
+.bs-searchbox + .bs-actionsbox {
+  padding: 0;
+}
+
+.bs-searchbox .form-control {
+  margin-bottom: 0;
+  width: 100%;
+  float: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #f4f4f4;
+  margin: -5px 0 10px 0;
+  height: 38px;
+  line-height: 38px;
+  padding: 10px;
+}
+
+.bs-searchbox .form-control:focus {
+  margin-bottom: 0;
+  width: 100%;
+  float: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #f4f4f4;
+  margin: -5px 0 10px 0;
+  height: 38px;
+  line-height: 38px;
+  padding: 10px;
+}
+
+.bs-searchbox:after {
+  font-family: "Material-Icons";
+  content: "\e982";
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  line-height: 0;
+  display: inline-block;
+  position: absolute;
+  margin: 0;
+  color: var(--iconColor);
+  right: 15px;
+  top: 18px;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+.caret::before {
+  font-size: 20px;
+  width: 1.4em;
+  margin-right: -12px;
+  float: right;
+  font-family: "Feather-Icons";
+  content: "\e92e";
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.uk-open > .uk-accordion-title::before {
+  content: "\e931";
+}
+
+.dropup,
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  padding: 10px 0;
+  margin: -4px 0 0 0;
+  font-size: 15px;
+  text-align: left;
+  list-style: none;
+  background-color: var(--defaultColor);
+  border: none;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu .divider {
+  display: none;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  padding: 7px 10px;
+  padding-right: 35px;
+  clear: both;
+  font-weight: normal;
+  line-height: 21px;
+  color: var(--textColor2);
+  border-radius: 6px;
+}
+
+.bootstrap-select:before {
+  content: "";
+  position: absolute;
+  z-index: 2100;
+  bottom: 0px;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background-color: var(--defaultColor);
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.bootstrap-select.open:before {
+  opacity: 1;
+}
+
+.dropdown-menu > li > a:hover {
+  color: var(--primaryColor);
+  text-decoration: none;
+  background-color: var(--keywordColor);
+}
+
+.dropdown-menu > .active > a {
+  color: var(--primaryColor);
+  text-decoration: none;
+  background-color: var(--keywordColor);
+}
+
+.dropdown-menu > .active > a:hover {
+  color: var(--primaryColor);
+  text-decoration: none;
+  background-color: var(--keywordColor);
+}
+
+.dropdown-menu > .disabled > a {
+  color: #777;
+}
+
+.dropdown-menu > .disabled > a:hover {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+  background-image: none;
+}
+
+.dropdown-menu.inner::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dropdown-menu.inner::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 12px;
+}
+
+.dropdown-menu.inner::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background-color: #d8d8d8;
+}
+
+.dropdown-menu.inner::-webkit-scrollbar-thumb:hover {
+  border-radius: 12px;
+  background-color: #c8c8c8;
+}
+
+/* Custom Scrollbar for -wekbit */
+.bootstrap-select .dropdown-menu {
+  opacity: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: block;
+  pointer-events: none;
+  visibility: hidden;
+  cursor: default;
+}
+
+.bootstrap-select.open .dropdown-menu {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
+.open > a {
+  outline: 0;
+}
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu-left {
+  right: auto;
+  left: 0;
+}
+
+.dropdown-header {
+  display: block;
+  padding: 7px 10px;
+  line-height: 20px;
+  white-space: nowrap;
+  background: #f6f6f6;
+  color: #777;
+  border-radius: 6px;
+  margin-bottom: 1px;
+}
+
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+}
+
+.pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+  content: "";
+  border-top: 0;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid \9;
+}
+
+.dropup .dropdown-menu,
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: 100%;
+  bottom: auto;
+  margin-bottom: 2px;
+}
+
+.bootstrap-select.btn-group {
+  position: relative;
+}
+
+.bootstrap-select.btn-group button {
+  position: relative;
+  display: inline-block;
+  height: 48px;
+  line-height: 0;
+  padding: 0 20px;
+  margin: 0;
+  outline: none;
+  font-size: 15px;
+  color: var(--textColor2);
+  max-width: 100%;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  background-color: var(--defaultColor);
+  font-weight: 500;
+  opacity: 1;
+  border-radius: 6px;
+  border: none;
+  -webkit-box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+/* Select Check Icon */
+.hide-tick .check-mark {
+  display: none !important;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a span.check-mark {
+  position: absolute;
+  display: inline-block;
+  right: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0;
+  line-height: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li span.check-mark:before {
+  font-family: "Feather-Icons";
+  content: "\e92b";
+  font-size: 18px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: inline-block;
+  top: 50%;
+  right: 0;
+  position: absolute;
+  margin: 0;
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+
+.bootstrap-select.btn-group .dropdown-menu li.selected span.check-mark:before {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0.35s cubic-bezier(0.3, -0.41, 0.19, 2), opacity 0.3s;
+  transition: all 0.35s cubic-bezier(0.3, -0.41, 0.19, 2), opacity 0.3s;
+}
+
+.bootstrap-select .dropdown-menu li.selected a span.check-mark:before,
+.bootstrap-select .dropdown-menu li.selected:hover a span.check-mark:before {
+  color: var(--primaryColor);
+}
+
+.bootstrap-select .glyphicon:not(.check-mark) {
+  font-size: 17px;
+  line-height: 0;
+  position: relative;
+  top: 1px;
+  margin-right: 3px;
+}
+
+.bootstrap-select .filter-option .glyphicon {
+  position: relative;
+  top: 1px;
+}

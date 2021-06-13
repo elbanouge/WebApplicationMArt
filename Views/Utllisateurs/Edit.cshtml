@@ -1,0 +1,74 @@
+﻿@model WebApplicationMArt.Models.Utllisateur
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Utllisateur</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdUtl" />
+            <div class="form-group">
+                <label asp-for="NomUtl" class="control-label"></label>
+                <input asp-for="NomUtl" class="form-control" />
+                <span asp-validation-for="NomUtl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrenomUtl" class="control-label"></label>
+                <input asp-for="PrenomUtl" class="form-control" />
+                <span asp-validation-for="PrenomUtl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MotPassUtl" class="control-label"></label>
+                <input asp-for="MotPassUtl" class="form-control" />
+                <span asp-validation-for="MotPassUtl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelUtl" class="control-label"></label>
+                <input asp-for="TelUtl" class="form-control" />
+                <span asp-validation-for="TelUtl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailUtl" class="control-label"></label>
+                <input asp-for="EmailUtl" class="form-control" />
+                <span asp-validation-for="EmailUtl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdresseUtl" class="control-label"></label>
+                <input asp-for="AdresseUtl" class="form-control" />
+                <span asp-validation-for="AdresseUtl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaysUtl" class="control-label"></label>
+                <input asp-for="PaysUtl" class="form-control" />
+                <span asp-validation-for="PaysUtl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DomaineUtl" class="control-label"></label>
+                <input asp-for="DomaineUtl" class="form-control" />
+                <span asp-validation-for="DomaineUtl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUtl" class="control-label"></label>
+                <input asp-for="ImageUtl" class="form-control" />
+                <span asp-validation-for="ImageUtl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

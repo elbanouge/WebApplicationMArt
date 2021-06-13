@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebApplicationMArt.Models.Utllisateur>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomUtl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrenomUtl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotPassUtl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelUtl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailUtl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdresseUtl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaysUtl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DomaineUtl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUtl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomUtl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrenomUtl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotPassUtl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelUtl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailUtl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdresseUtl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaysUtl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DomaineUtl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUtl)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdUtl">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdUtl">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdUtl">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

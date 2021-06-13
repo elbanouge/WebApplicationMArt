@@ -1,0 +1,72 @@
+﻿@model WebApplicationMArt.Models.Utllisateur
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Utllisateur</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomUtl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomUtl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PrenomUtl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PrenomUtl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MotPassUtl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MotPassUtl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelUtl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelUtl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailUtl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailUtl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdresseUtl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdresseUtl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PaysUtl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PaysUtl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DomaineUtl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DomaineUtl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageUtl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageUtl)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdUtl">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

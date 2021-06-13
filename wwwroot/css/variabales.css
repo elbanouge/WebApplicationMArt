@@ -1,0 +1,27 @@
+/* CSS Variables */
+
+:root {
+  --primaryColor: #ff6174;
+  --secondaryColor: #185adb;
+  --tertiaryColor: #42caff;
+
+  --defaultColor: #fff;
+  --backgroundColor: #f9fafb;
+  --backgroundColor2: #f0f2f5;
+  --backgroundColor3: #d0d0d0;
+
+  --textColor: #33383c;
+  --textColor2: #737373;
+  --textColor3: #f0f2f5;
+  --textColor4: #a7a7a7;
+  
+  --borderColor: #f1f3f4;
+  --borderColor2: #b4b4b4;
+  
+  --bodyColor: #666;
+  --iconColor: #a0a0a0;
+  --onlineColor: #38b653;
+  
+  /* font family style */
+  --rubik: "Rubik", system-ui;
+}
