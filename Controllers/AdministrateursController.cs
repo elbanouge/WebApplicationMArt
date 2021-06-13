@@ -15,6 +15,7 @@ namespace WebApplicationMArt.Controllers
 
         public AdministrateursController(MArtContext context)
         {
+            //LinkedList<Administrateur> administrateurs = new LinkedList<Administrateur>();
             _context = context;
         }
 
